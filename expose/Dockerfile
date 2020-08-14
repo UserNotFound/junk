@@ -11,7 +11,8 @@
 
 
 
+ENV PORT 3000
 
-EXPOSE 80 443 3000
+EXPOSE $PORT
 
-CMD ["bundle","exec","rails","server","-b","0.0.0.0"]
+CMD ["bundle","exec","rails","server","-b","0.0.0.0","-p","$PORT"]
