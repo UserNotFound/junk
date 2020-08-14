@@ -1,6 +1,6 @@
 # Procfile
 
-web: bundle exec rails server -b 0.0.0.0 -p 3000
-workers: QUEUES=mailers,tasks rake jobs:work
-tracking-worker: QUEUE=tracking rake jobs:work
-periodic: supercronic jobs.crontab
+web: exec bundle exec rails server -b 0.0.0.0 -p 3000
+workers: QUEUES=mailers,tasks exec rake jobs:work
+tracking-worker: QUEUE=tracking exec rake jobs:work
+periodic: exec supercronic jobs.crontab
